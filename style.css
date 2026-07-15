@@ -387,6 +387,13 @@ section {
   font-size: 1.03rem;
 }
 
+.hero-subtext {
+  margin: 0.25rem 0 1.2rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 28rem;
+}
+
 .hours-list {
   display: grid;
   gap: 0.6rem;
