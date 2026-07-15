@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-label="Placeholder burgers category art">
+  <rect width="900" height="600" fill="#fffdf8"/>
+  <rect x="72" y="70" width="756" height="460" rx="30" fill="#fff8eb"/>
+  <rect x="190" y="180" width="520" height="220" rx="32" fill="#a53e2a"/>
+  <rect x="222" y="218" width="456" height="58" rx="16" fill="#7a2418"/>
+  <rect x="222" y="292" width="126" height="46" rx="12" fill="#f4c76c"/>
+  <rect x="360" y="292" width="126" height="46" rx="12" fill="#f4c76c"/>
+  <rect x="498" y="292" width="180" height="46" rx="12" fill="#f4c76c"/>
+  <rect x="140" y="430" width="220" height="80" rx="20" fill="#f2b454" opacity="0.35"/>
+  <rect x="560" y="430" width="180" height="80" rx="20" fill="#234b5a" opacity="0.72"/>
+  <text x="450" y="534" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#234b5a">BURGERS</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-label="Placeholder fries category art">
+  <rect width="900" height="600" fill="#fffdf8"/>
+  <rect x="72" y="70" width="756" height="460" rx="30" fill="#fff8eb"/>
+  <rect x="190" y="170" width="520" height="250" rx="28" fill="#d9921f"/>
+  <path d="M230 282c0-54 44-98 98-98h244c54 0 98 44 98 98v36H230z" fill="#a85c17"/>
+  <path d="M280 256c0-34 28-62 62-62h78c34 0 62 28 62 62" fill="none" stroke="#f4d35e" stroke-width="8" stroke-linecap="round"/>
+  <path d="M470 256c0-34 28-62 62-62h78c34 0 62 28 62 62" fill="none" stroke="#f4d35e" stroke-width="8" stroke-linecap="round"/>
+  <rect x="220" y="430" width="460" height="72" rx="18" fill="#234b5a" opacity="0.75"/>
+  <text x="450" y="534" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#234b5a">SIDES</text>
+</svg>

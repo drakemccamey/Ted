@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-label="Placeholder ice cream category art">
+  <rect width="900" height="600" fill="#fffdf8"/>
+  <rect x="72" y="70" width="756" height="460" rx="30" fill="#fff8eb"/>
+  <circle cx="450" cy="284" r="150" fill="#f6db92"/>
+  <path d="M330 250c0-68 54-122 120-122s120 54 120 122" fill="#e59b54"/>
+  <rect x="320" y="370" width="260" height="70" rx="20" fill="#234b5a"/>
+  <rect x="220" y="430" width="460" height="70" rx="20" fill="#f2b454" opacity="0.36"/>
+  <text x="450" y="534" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#234b5a">ICE CREAM</text>
+</svg>

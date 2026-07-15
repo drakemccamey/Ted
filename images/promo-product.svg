@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-label="Placeholder ice cream product art">
+  <rect width="900" height="700" rx="30" fill="#fff8ee"/>
+  <rect x="70" y="70" width="760" height="560" rx="28" fill="#fff" stroke="#e4d8c7" stroke-width="4"/>
+  <ellipse cx="450" cy="360" rx="190" ry="160" fill="#f8d8b3"/>
+  <ellipse cx="450" cy="340" rx="150" ry="120" fill="#eaa45d"/>
+  <ellipse cx="432" cy="312" rx="124" ry="88" fill="#fff0d1"/>
+  <path d="M336 304c0-72 52-130 114-130s114 58 114 130" fill="none" stroke="#a95d30" stroke-width="12" stroke-linecap="round"/>
+  <rect x="290" y="420" width="320" height="72" rx="20" fill="#234b5a"/>
+  <text x="450" y="620" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#234b5a">REPLACE WITH ICE CREAM PHOTO</text>
+</svg>
