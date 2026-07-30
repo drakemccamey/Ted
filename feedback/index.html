@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Share your thoughts with Ted's Kitchen in Hico, Texas."
+    />
+    <title>Feedback | Ted's Kitchen</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-shell">
+        <div class="nav-left">
+          <a class="brand" href="../" aria-label="Ted's home">
+            <div class="brand-sign" aria-hidden="true">
+              <img class="brand-sign-image" src="../images/teds-sign.png" alt="" />
+              <div class="brand-bulb-layer"></div>
+            </div>
+          </a>
+
+          <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+            <a href="#" onclick="event.preventDefault();">MENU</a>
+            <a href="../careers/">CAREERS</a>
+            <a href="../hours-location/">HOURS &amp; LOCATION</a>
+            <a href="../our-story/">OUR STORY</a>
+            <a href="../press/">PRESS</a>
+          </nav>
+        </div>
+
+        <div class="nav-actions">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a class="button button-order" href="https://gotab.io/loc/teds" target="_blank" rel="noopener noreferrer">ORDER NOW</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="feedback-page">
+        <div class="container feedback-shell">
+          <div class="feedback-intro">
+            <p class="eyebrow">Hico, Texas</p>
+            <h1>TELL TED WHAT YOU THINK</h1>
+            <p class="hero-text hero-subtext">
+              Loved something? Think we could do something better? We’re listening. Your feedback helps us make Ted’s the kind of place Hico is proud to call its own.
+            </p>
+            <p class="feedback-note">
+              You may submit feedback anonymously. We only ask for contact details if you would like someone from Ted’s to reach out.
+            </p>
+          </div>
+
+          <form id="feedback-form" class="feedback-form" action="https://formspree.io/f/mojgzvaz" method="post" novalidate>
+            <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="_subject" value="New Ted's Kitchen Guest Feedback" />
+            <input type="hidden" name="_format" value="plain" />
+
+            <div class="form-row rating-row">
+              <fieldset class="rating-fieldset">
+                <legend>Overall experience <span aria-hidden="true">*</span></legend>
+                <div class="star-rating" role="radiogroup" aria-labelledby="rating-label">
+                  <span id="rating-label" class="sr-only">Choose a star rating from 1 to 5</span>
+                  <input class="sr-only" type="radio" id="rating-1" name="overall_experience" value="1" required />
+                  <label class="star-control" for="rating-1" aria-label="1 star">★</label>
+
+                  <input class="sr-only" type="radio" id="rating-2" name="overall_experience" value="2" required />
+                  <label class="star-control" for="rating-2" aria-label="2 stars">★</label>
+
+                  <input class="sr-only" type="radio" id="rating-3" name="overall_experience" value="3" required />
+                  <label class="star-control" for="rating-3" aria-label="3 stars">★</label>
+
+                  <input class="sr-only" type="radio" id="rating-4" name="overall_experience" value="4" required />
+                  <label class="star-control" for="rating-4" aria-label="4 stars">★</label>
+
+                  <input class="sr-only" type="radio" id="rating-5" name="overall_experience" value="5" required />
+                  <label class="star-control" for="rating-5" aria-label="5 stars">★</label>
+                </div>
+                <p class="field-error" id="rating-error" role="alert"></p>
+              </fieldset>
+            </div>
+
+            <div class="form-row">
+              <label for="feedback-type">Feedback type <span aria-hidden="true">*</span></label>
+              <select id="feedback-type" name="feedback_type" required>
+                <option value="">Select an option</option>
+                <option value="Compliment">Compliment</option>
+                <option value="Suggestion">Suggestion</option>
+                <option value="Something went wrong">Something went wrong</option>
+              </select>
+              <p class="field-error" data-error-for="feedback_type" role="alert"></p>
+            </div>
+
+            <div class="form-row">
+              <label for="comments">Comments <span aria-hidden="true">*</span></label>
+              <textarea id="comments" name="comments" rows="6" required></textarea>
+              <p class="field-error" data-error-for="comments" role="alert"></p>
+            </div>
+
+            <div class="form-row">
+              <label for="visit-date">Date of visit</label>
+              <input id="visit-date" name="visit_date" type="date" />
+            </div>
+
+            <div class="form-row">
+              <label>Would you like someone from Ted’s to contact you? <span aria-hidden="true">*</span></label>
+              <div class="choice-group" role="radiogroup" aria-label="Would you like someone from Ted's to contact you?">
+                <label class="choice-pill">
+                  <input type="radio" name="contact_preference" value="Yes" required />
+                  <span>Yes</span>
+                </label>
+                <label class="choice-pill">
+                  <input type="radio" name="contact_preference" value="No" required />
+                  <span>No</span>
+                </label>
+              </div>
+              <p class="field-error" data-error-for="contact_preference" role="alert"></p>
+            </div>
+
+            <div id="contact-fields" class="contact-fields" aria-live="polite">
+              <div class="form-row">
+                <label for="guest-name">Name</label>
+                <input id="guest-name" name="guest_name" type="text" data-contact-required="true" />
+                <p class="field-error" data-error-for="guest_name" role="alert"></p>
+              </div>
+
+              <div class="form-row">
+                <label for="guest-email">Email address</label>
+                <input id="guest-email" name="guest_email" type="email" inputmode="email" data-contact-required="true" />
+                <p class="field-error" data-error-for="guest_email" role="alert"></p>
+              </div>
+
+              <div class="form-row">
+                <label for="guest-phone">Phone number</label>
+                <input id="guest-phone" name="guest_phone" type="tel" inputmode="tel" data-contact-required="true" />
+                <p class="field-error" data-error-for="guest_phone" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button-primary" type="submit" id="submit-button">SEND FEEDBACK</button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <div id="form-success" class="form-success" role="status" aria-live="polite" hidden>
+            <p class="eyebrow">THANKS, Y’ALL!</p>
+            <h2>We appreciate you taking the time to help us make Ted’s even better.</h2>
+            <p>Your feedback is on the way and we’ll use it to keep making Ted’s a place Hico is proud to call home.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="logo-marquee footer-logo" aria-hidden="true">
+            <div class="marquee-sign">
+              <span class="marquee-label">TED'S</span>
+              <span class="marquee-line"></span>
+            </div>
+            <div class="marquee-bulbs">
+              <span class="marquee-bulb"></span>
+              <span class="marquee-bulb"></span>
+              <span class="marquee-bulb"></span>
+              <span class="marquee-bulb"></span>
+              <span class="marquee-bulb"></span>
+              <span class="marquee-bulb"></span>
+            </div>
+          </div>
+          <p class="footer-copy">Bold burgers, cool treats, and hometown hospitality.</p>
+          <a class="footer-feedback-link" href="../feedback/">Tell Us What You Think</a>
+        </div>
+
+        <div class="footer-nav">
+          <a href="../careers/">Careers</a>
+          <a href="../hours-location/">Hours &amp; Location</a>
+          <a href="../our-story/">Our Story</a>
+          <a href="../press/">Press</a>
+          <a href="../feedback/">Feedback</a>
+        </div>
+
+        <div class="footer-contact">
+          <p><strong>Ted's Kitchen</strong></p>
+          <p>107 S Pecan St<br />Hico, TX 76457</p>
+          <p>OPENING SOON</p>
+          <p>Facebook • Instagram</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> Ted's Kitchen. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

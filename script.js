@@ -81,4 +81,173 @@ document.addEventListener('DOMContentLoaded', () => {
       bulbs.forEach((bulb) => bulb.classList.add('is-active'));
     }
   }
+
+  const feedbackForm = document.getElementById('feedback-form');
+  const formSuccess = document.getElementById('form-success');
+  const formStatus = document.getElementById('form-status');
+  const submitButton = document.getElementById('submit-button');
+  const contactFields = document.getElementById('contact-fields');
+  const contactRadios = Array.from(document.querySelectorAll('input[name="contact_preference"]'));
+  const contactInputs = contactFields ? Array.from(contactFields.querySelectorAll('input[data-contact-required="true"]')) : [];
+  const starInputs = Array.from(document.querySelectorAll('input[name="overall_experience"]'));
+  const ratingError = document.getElementById('rating-error');
+
+  const clearFieldErrors = () => {
+    document.querySelectorAll('.field-error').forEach((error) => {
+      error.textContent = '';
+    });
+    document.querySelectorAll('[aria-invalid="true"]').forEach((field) => {
+      field.removeAttribute('aria-invalid');
+    });
+  };
+
+  const setFieldError = (field, message) => {
+    if (!field) return;
+    field.setAttribute('aria-invalid', 'true');
+    const error = document.querySelector(`[data-error-for="${field.name}"]`);
+    if (error) {
+      error.textContent = message;
+    }
+  };
+
+  const syncStarSelection = () => {
+    const selectedIndex = starInputs.findIndex((input) => input.checked);
+
+    starInputs.forEach((input, index) => {
+      const label = document.querySelector(`label[for="${input.id}"]`);
+      if (label) {
+        label.classList.toggle('is-selected', index <= selectedIndex);
+      }
+    });
+  };
+
+  const updateContactFields = () => {
+    const wantsContact = contactRadios.some((radio) => radio.checked && radio.value === 'Yes');
+
+    contactInputs.forEach((input) => {
+      input.required = wantsContact;
+      input.disabled = !wantsContact;
+      input.classList.toggle('is-disabled', !wantsContact);
+      if (!wantsContact) {
+        input.value = '';
+      }
+    });
+
+    if (contactFields) {
+      contactFields.classList.toggle('is-visible', wantsContact);
+      contactFields.setAttribute('aria-hidden', wantsContact ? 'false' : 'true');
+    }
+  };
+
+  const validateForm = () => {
+    clearFieldErrors();
+    let isValid = true;
+
+    if (!starInputs.some((input) => input.checked)) {
+      if (ratingError) {
+        ratingError.textContent = 'Please choose a rating from 1 to 5.';
+      }
+      isValid = false;
+    }
+
+    const feedbackType = feedbackForm?.elements['feedback_type'];
+    if (feedbackType && !feedbackType.value) {
+      setFieldError(feedbackType, 'Please choose a feedback type.');
+      isValid = false;
+    }
+
+    const comments = feedbackForm?.elements['comments'];
+    if (comments && !comments.value.trim()) {
+      setFieldError(comments, 'Please share a few details about your experience.');
+      isValid = false;
+    }
+
+    const contactPreference = feedbackForm?.elements['contact_preference'];
+    if (!contactPreference || !Array.from(contactPreference).some((radio) => radio.checked)) {
+      const contactError = document.querySelector('[data-error-for="contact_preference"]');
+      if (contactError) {
+        contactError.textContent = 'Please tell us whether you would like a response.';
+      }
+      isValid = false;
+    }
+
+    const wantsContact = contactRadios.some((radio) => radio.checked && radio.value === 'Yes');
+    if (wantsContact) {
+      contactInputs.forEach((input) => {
+        if (!input.value.trim()) {
+          setFieldError(input, 'Please share this so we can follow up.');
+          isValid = false;
+        }
+      });
+
+      const emailInput = feedbackForm?.elements['guest_email'];
+      if (emailInput && emailInput.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+        setFieldError(emailInput, 'Please enter a valid email address.');
+        isValid = false;
+      }
+    }
+
+    return isValid;
+  };
+
+  if (feedbackForm) {
+    starInputs.forEach((input) => {
+      input.addEventListener('change', syncStarSelection);
+    });
+
+    contactRadios.forEach((radio) => {
+      radio.addEventListener('change', updateContactFields);
+    });
+
+    feedbackForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!validateForm()) {
+        const firstError = feedbackForm.querySelector('[aria-invalid="true"]');
+        if (firstError) {
+          firstError.focus();
+        }
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'SENDING...';
+      formStatus.textContent = 'Sending your feedback now...';
+      formStatus.className = 'form-status';
+      formSuccess.classList.remove('is-visible');
+      formSuccess.hidden = true;
+
+      try {
+        const response = await fetch(feedbackForm.action, {
+          method: 'POST',
+          body: new FormData(feedbackForm),
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          feedbackForm.reset();
+          updateContactFields();
+          syncStarSelection();
+          formStatus.textContent = 'Thanks for sharing your thoughts with Ted’s.';
+          formStatus.className = 'form-status is-success';
+          formSuccess.hidden = false;
+          formSuccess.classList.add('is-visible');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          throw new Error('Submission failed.');
+        }
+      } catch (error) {
+        formStatus.textContent = 'Sorry, we could not send your feedback right now. Please try again shortly.';
+        formStatus.className = 'form-status is-error';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'SEND FEEDBACK';
+      }
+    });
+
+    updateContactFields();
+    syncStarSelection();
+  }
 });
