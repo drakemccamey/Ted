@@ -429,6 +429,40 @@ button {
   max-width: 28rem;
 }
 
+.hero-hours {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0.25rem 0 1.4rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(22, 59, 77, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(22, 59, 77, 0.08);
+}
+
+.hero-hours-title {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.hero-hours-time {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
 .hours-list {
   display: grid;
   gap: 0.6rem;
