@@ -1222,6 +1222,7 @@ button {
   .promo-grid,
   .story-grid,
   .visit-grid,
+  .press-grid,
   .feedback-shell,
   .footer-grid {
     grid-template-columns: 1fr;
@@ -1234,6 +1235,10 @@ button {
 
   .card-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-press-card {
+    grid-column: auto;
   }
 
   .menu-items {
