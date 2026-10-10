@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Play Flappy Ted, a little hop-and-dodge game from Ted's Kitchen in Hico, Texas." />
+    <meta name="leaderboard-api-url" content="https://teds-top-dogs-api.drakemccamey.workers.dev" />
     <title>Flappy Ted | Ted's Kitchen</title>
     <link rel="icon" type="image/png" href="../favicon.png" />
     <link rel="stylesheet" href="../style.css" />
@@ -87,6 +88,44 @@
         </div>
         <p class="sr-only" id="game-status" aria-live="polite" aria-atomic="true"></p>
       </section>
+
+      <section class="leaderboard-panel" aria-labelledby="leaderboard-title">
+        <p class="eyebrow">The shared high scores</p>
+        <h2 id="leaderboard-title">Ted&rsquo;s Top Dogs</h2>
+        <p class="leaderboard-intro">No account needed. The five top flights from players everywhere.</p>
+        <p class="leaderboard-status" id="leaderboard-status" aria-live="polite">Loading the leaderboard&hellip;</p>
+        <div class="leaderboard-table-wrap">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Nickname</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-entries"></tbody>
+          </table>
+        </div>
+        <div class="leaderboard-submit" id="leaderboard-submit" hidden>
+          <h3>That&rsquo;s a top-five flight!</h3>
+          <p id="leaderboard-qualifying-copy"></p>
+          <form id="leaderboard-form">
+            <label for="leaderboard-nickname">Choose a nickname</label>
+            <div class="leaderboard-form-row">
+              <input
+                id="leaderboard-nickname"
+                name="nickname"
+                type="text"
+                maxlength="24"
+                autocomplete="nickname"
+                required
+              />
+              <button class="button button-order" type="submit">Add my score</button>
+            </div>
+            <p class="leaderboard-form-status" id="leaderboard-form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -118,6 +157,7 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script src="leaderboard.js"></script>
     <script src="play.js"></script>
   </body>
 </html>

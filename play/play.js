@@ -84,6 +84,7 @@
   const beginGame = () => {
     resetGame();
     state = 'playing';
+    window.dispatchEvent(new CustomEvent('flappy-ted:game-start'));
     message.hidden = true;
     pauseButton.disabled = false;
     pauseButton.textContent = 'Pause';
@@ -124,6 +125,7 @@
       ? `You scored ${score} ${score === 1 ? 'point' : 'points'} and set a new best!`
       : `You scored ${score} ${score === 1 ? 'point' : 'points'}. Ready for another flight?`, 'Play Again');
     gameStatus.textContent = `Game over. Score ${score}. Best score ${bestScore}.`;
+    window.dispatchEvent(new CustomEvent('flappy-ted:game-over', { detail: { score } }));
   };
 
   const roundedRect = (ctx, x, y, width, height, radius) => {

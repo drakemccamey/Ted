@@ -1,0 +1,12 @@
+name = "teds-top-dogs-api"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://tedskitchen.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "teds-leaderboard"
+database_id = "882319dc-1aa7-4e69-89c7-ba4265a61e69"
+migrations_dir = "migrations"
