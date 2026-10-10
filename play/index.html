@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Play Flappy Ted, a little hop-and-dodge game from Ted's Kitchen in Hico, Texas." />
+    <title>Flappy Ted | Ted's Kitchen</title>
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="play.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-shell">
+        <div class="nav-left">
+          <a class="brand" href="../" aria-label="Ted's home">
+            <div class="brand-sign" aria-hidden="true">
+              <img class="brand-sign-image" src="../images/teds-sign.png" alt="" />
+              <div class="brand-bulb-layer"></div>
+            </div>
+          </a>
+
+          <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+            <a href="../menu/">MENU</a>
+            <a href="../careers/">CAREERS</a>
+            <a href="../hours-location/">HOURS &amp; LOCATION</a>
+            <a href="../our-story/">OUR STORY</a>
+            <a href="../press/">PRESS</a>
+            <a href="../#rewards">REWARDS</a>
+            <a href="./" aria-current="page">PLAY</a>
+          </nav>
+        </div>
+
+        <div class="nav-actions">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a class="button button-order" href="https://gotab.io/loc/teds" target="_blank" rel="noopener noreferrer">ORDER NOW</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="play-page">
+      <section class="play-intro" aria-labelledby="game-title">
+        <p class="eyebrow">A Ted's Kitchen game</p>
+        <h1 id="game-title">Flappy Ted</h1>
+        <p>Help Ted hop between the fry cartons. How many can you pass?</p>
+      </section>
+
+      <section class="game-area" id="game-area" aria-label="Flappy Ted game">
+        <div class="game-toolbar">
+          <div class="scoreboard" aria-label="Scores">
+            <p>Score <strong id="current-score">0</strong></p>
+            <p>Best <strong id="best-score">0</strong></p>
+          </div>
+          <button class="button button-secondary pause-button" id="pause-button" type="button" disabled>Pause</button>
+        </div>
+
+        <div class="game-board">
+          <canvas
+            id="game-canvas"
+            class="game-canvas"
+            width="420"
+            height="560"
+            tabindex="0"
+            role="img"
+            aria-label="A side-view Soft Coated Wheaten Terrier named Ted flying between restaurant fry carton obstacles. Press Space or Arrow Up to hop."
+          ></canvas>
+
+          <div class="game-message" id="game-message">
+            <div class="message-card">
+              <p class="eyebrow">Ready, Ted?</p>
+              <h2 id="message-title">Flappy Ted</h2>
+              <p id="message-copy">Tap, press Space, or use Arrow Up to hop through the gaps. Pass each fry carton to score.</p>
+              <button class="button button-order" id="start-button" type="button">Start</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="game-note">Best scores are saved on this device.</p>
+        <div class="game-links">
+          <a class="button button-secondary" href="../">Back to Ted&rsquo;s</a>
+          <a class="button button-order" href="https://gotab.io/loc/teds" target="_blank" rel="noopener noreferrer">Order Food</a>
+        </div>
+        <p class="sr-only" id="game-status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="logo-marquee footer-logo" aria-hidden="true">
+            <div class="marquee-sign">
+              <span class="marquee-label">TED'S</span>
+              <span class="marquee-line"></span>
+            </div>
+          </div>
+          <p class="footer-copy">Bold burgers, cool treats, and hometown hospitality.</p>
+        </div>
+        <div class="footer-nav">
+          <a href="../menu/">Menu</a>
+          <a href="../hours-location/">Hours &amp; Location</a>
+          <a href="../#rewards">Ted&rsquo;s Rewards</a>
+          <a href="./">Play Flappy Ted</a>
+        </div>
+        <div class="footer-contact">
+          <p><strong>Ted's Kitchen</strong></p>
+          <p>107 S Pecan St<br />Hico, TX 76457</p>
+          <a href="https://gotab.io/loc/teds" target="_blank" rel="noopener noreferrer">Order Food</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; <span id="year"></span> Ted's Kitchen. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="play.js"></script>
+  </body>
+</html>

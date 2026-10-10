@@ -1,0 +1,193 @@
+.play-page {
+  min-height: 60vh;
+  padding: clamp(1.5rem, 4vw, 3rem) 20px 3rem;
+  background: linear-gradient(180deg, #effaff 0%, var(--cream) 70%);
+}
+
+.play-intro {
+  width: min(100%, 620px);
+  margin: 0 auto 1.25rem;
+  text-align: center;
+}
+
+.play-intro h1 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.play-intro > p:last-child {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.game-area {
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+.game-toolbar,
+.scoreboard,
+.game-links {
+  display: flex;
+  align-items: center;
+}
+
+.game-toolbar {
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.scoreboard {
+  gap: 0.6rem;
+}
+
+.scoreboard p {
+  min-width: 6.1rem;
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(22, 59, 77, 0.1);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--blue);
+  font-weight: 700;
+  text-align: center;
+}
+
+.scoreboard strong {
+  margin-left: 0.2rem;
+  color: var(--red);
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.pause-button {
+  min-width: 6.7rem;
+  min-height: 2.9rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+}
+
+.game-board {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 4px solid var(--blue);
+  border-radius: 1.1rem;
+  background: #a7e6fb;
+  box-shadow: 0 14px 32px rgba(22, 59, 77, 0.16);
+  touch-action: none;
+}
+
+.game-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.game-message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(22, 59, 77, 0.22);
+}
+
+.game-message[hidden] {
+  display: none;
+}
+
+.message-card {
+  width: min(100%, 350px);
+  padding: clamp(1.2rem, 5vw, 2rem);
+  border: 2px solid rgba(40, 114, 148, 0.15);
+  border-radius: 1.25rem;
+  background: var(--cream);
+  box-shadow: 0 18px 42px rgba(22, 59, 77, 0.2);
+  text-align: center;
+}
+
+.message-card .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.message-card h2 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(1.65rem, 6vw, 2.15rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.message-card p:not(.eyebrow) {
+  margin: 0.75rem 0 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.message-card .button {
+  min-height: 3.25rem;
+  min-width: 9rem;
+  font-size: 1.05rem;
+}
+
+.game-note {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.game-links {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.game-links .button {
+  min-height: 3rem;
+}
+
+@media (max-width: 380px) {
+  .play-page {
+    padding-inline: 12px;
+  }
+
+  .scoreboard {
+    gap: 0.25rem;
+  }
+
+  .scoreboard p {
+    min-width: 4.6rem;
+    padding-inline: 0.4rem;
+  }
+
+  .game-toolbar {
+    gap: 0.4rem;
+  }
+
+  .pause-button {
+    min-width: 5.25rem;
+    padding-inline: 0.55rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .play-page .button,
+  .game-message *,
+  .game-board {
+    transition: none;
+  }
+}

@@ -1294,12 +1294,15 @@ button {
   .nav-shell {
     position: relative;
     align-items: center;
+    gap: 0.5rem;
     min-height: 96px;
     padding: 0 20px;
   }
 
   .nav-left {
-    width: 100%;
+    width: auto;
+    flex: 1;
+    min-width: 0;
     justify-content: space-between;
   }
 
@@ -1384,6 +1387,23 @@ button {
     width: 128px;
   }
 
+  .nav-shell {
+    gap: 0.5rem;
+  }
+
+  .nav-actions {
+    gap: 0.45rem;
+  }
+
+  .nav-actions .button-order {
+    padding-inline: 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .brand-sign {
+    width: clamp(76px, 28vw, 100px);
+  }
+
   .brand-bulb {
     width: 6px;
     height: 6px;
@@ -1404,7 +1424,89 @@ button {
   }
 }
 
+@media (min-width: 701px) and (max-width: 1020px) {
+  .nav-shell {
+    position: relative;
+    min-height: 96px;
+    padding: 0 32px;
+  }
+
+  .nav-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 32px;
+    right: 32px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(19, 35, 43, 0.12);
+    z-index: 10;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+}
+
+.play-promo-section {
+  padding: 0 0 3rem;
+}
+
+.play-promo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
+  border: 1px solid rgba(22, 59, 77, 0.08);
+  border-radius: 1.25rem;
+  background: linear-gradient(120deg, #dff8ff, var(--white));
+  box-shadow: var(--shadow);
+}
+
+.play-promo h2 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.1;
+}
+
+.play-promo p:not(.eyebrow) {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.play-promo .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+@media (max-width: 700px) {
+  .play-promo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .play-promo,
+  .play-promo * {
+    scroll-behavior: auto;
+    transition: none;
+  }
+
   .brand-bulb {
     transition: none;
     opacity: 0.74;
