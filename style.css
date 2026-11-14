@@ -1599,3 +1599,47 @@ button {
     box-shadow: 0 0 6px rgba(255, 213, 92, 0.4);
   }
 }
+
+/* Real food photos (Nov 2026) */
+.hero-visual img.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.menu-item-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.menu-sides-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.1rem;
+}
+
+.menu-sides-photos figure {
+  margin: 0;
+}
+
+.menu-sides-photos img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.menu-sides-photos figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+}
